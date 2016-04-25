@@ -16,6 +16,7 @@
   margin-left: 200px;
   margin-right: 180px;
   border-top-width: 35px;
+    list-style-type:none;
 }
 
 #listaOferta{
@@ -40,8 +41,16 @@ float: right;
 }
 
 #navegador ul{
-  list-style-type: none; /*le sacamos las bolitas de las viñetas*/
-  text-align: center; /*lo centramos*/
+  box-shadow: 0px 0px 15px gray;
+  height: 20px;
+  float: center;
+  margin-left: 210px;
+margin-right: 200px;
+width: 850;
+padding-right: 40px;
+
+  list-style-type:none; /*le sacamos las bolitas de las viñetas*/
+  text-align:center; /*lo centramos*/
 }
 
 #navegador li{  /*se pone la lista en horizontal y se acomodan los margenes*/
