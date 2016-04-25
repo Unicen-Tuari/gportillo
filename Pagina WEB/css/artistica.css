@@ -1,25 +1,33 @@
 
 
-.nombre, .oferta{
+.nombre, #oferta1, #oferta2{
   font-size: 25px;
   font-style: italic;
   font-family: sans-serif;
   text-align: center;
 }
 
-.oferta{
+#oferta1, #oferta2, #oferta3  {
   font-size: 20px;
   background-color: red;
-  background-position: center;
-  height: 300px;
-  width: 950px;
-  margin-left: 200px;
-  margin-right: 180px;
-  border-top-width: 35px;
-    list-style-type:none;
+  background-position:right;
+  list-style-type:none;
+  float:left;
+  width:33.3%;
+
 }
 
+#oferta2{
+  background-color: violet;
+}
+#oferta3{
+  background-color: orange;
+  width: 66.6%;
+}
+
+
 #listaOferta{
+
   text-align: left;
 }
 
