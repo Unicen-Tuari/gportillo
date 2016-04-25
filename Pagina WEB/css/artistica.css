@@ -1,6 +1,20 @@
 
 
-.nombre, #oferta1, #oferta2{
+.nombre{
+  font-size: 35px;
+  font-family: sans-serif;
+  font-style: italic;
+  font-variant: small-caps;
+  text-align: center;
+}
+#datos{
+  border: 1px dotted #999;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+
+#oferta1, #oferta2, #oferta3{
   font-size: 25px;
   font-style: italic;
   font-family: sans-serif;
@@ -11,24 +25,18 @@
   font-size: 20px;
   background-color: red;
   background-position:right;
-  list-style-type:none;
+  list-style: none;
   float:left;
   width:33.3%;
-
 }
 
 #oferta2{
   background-color: violet;
 }
+
 #oferta3{
   background-color: orange;
   width: 66.6%;
-}
-
-
-#listaOferta{
-
-  text-align: left;
 }
 
 #logo{
@@ -40,22 +48,23 @@
 }
 
 #imagender{
-background-image: url("../imagenes/pinceles derecha.jpg");
-background-size: 200px 400px;
-width: 200px;
-height: 400px;
-float: right;
+  background-image: url("../imagenes/pinceles derecha.jpg");
+  background-size: 200px 400px;
+  width: 200px;
+  height: 400px;
+  float: right;
 
 }
 
 #navegador ul{
   box-shadow: 0px 0px 15px gray;
+  background-color: #C5B8EF;
   height: 20px;
   float: center;
   margin-left: 210px;
-margin-right: 200px;
-width: 850;
-padding-right: 40px;
+  margin-right: 200px;
+  width: 850;
+  padding-right: 40px;
 
   list-style-type:none; /*le sacamos las bolitas de las viñetas*/
   text-align:center; /*lo centramos*/
@@ -70,8 +79,8 @@ padding-right: 40px;
 #navegador li a { /*le damos un marco, color y borde para cada elemento de la barra de navegacion*/
   padding: 2px 7px 2px 7px;
   color: #252c25;
-  background-color: #00de00;
-  border: 1px solid #ccc;
+  background-color: #C9B9FE;
+  /*border: 1px solid #ccc;*/
   text-decoration: none;
 }
 
