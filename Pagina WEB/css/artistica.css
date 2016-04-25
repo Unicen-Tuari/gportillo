@@ -1,0 +1,46 @@
+body{
+  background-color: green;
+}
+
+.nombre{
+  font-size: 25px;
+  font-style: italic;
+  font-family: sans-serif;
+}
+
+.logo{
+  background-color: 00de00;
+  background-image: url("../imagenes/logo.jpg");
+  background-size: 200px 100px;
+  width: 200px;
+  height: 100px;
+  float:inherit;;
+}
+
+.fondologo{
+  background-color: green;
+}
+
+#navegador ul{
+  list-style-type: none; /*le sacamos las bolitas de las viñetas*/
+  text-align: center; /*lo centramos*/
+}
+
+#navegador li{  /*se pone la lista en horizontal y se acomodan los margenes*/
+  display: inline;
+  text-align: center;
+  margin: 0 10px 0 0;
+}
+
+#navegador li a { /*le damos un marco, color y borde para cada elemento de la barra de navegacion*/
+  padding: 2px 7px 2px 7px;
+  color: #666;
+  background-color: #eeeeee;
+  border: 1px solid #ccc;
+  text-decoration: none;
+}
+
+#navegador li a:hover{ /*es para que cuando nos paremos arriba cambie de color*/
+  background-color: #333333;
+  color: #ffffff;
+}
