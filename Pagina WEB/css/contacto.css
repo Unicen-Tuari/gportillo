@@ -1,3 +1,6 @@
+body{
+  background-color: #E6E6E6;
+}
 
 h1{ /*diseño de la palabra contacto*/
   font-size: 35px;
@@ -28,7 +31,7 @@ h1{ /*diseño de la palabra contacto*/
   margin-top: 15px;
   background-size: cover;
   background-repeat: no-repeat;
-  float: left;;
+  float: left;
 }
 .imagenlateralDer{ /*pongo imagen a derecha*/
   background-image: url("../imagenes/imagencomentario.jpg");
@@ -38,7 +41,7 @@ h1{ /*diseño de la palabra contacto*/
   margin-top: 15px;
   background-size: cover;
   background-repeat: no-repeat;
-  float: right;;;
+  float: right;
 }
 
 .formulario{ /*centro el formulario*/
