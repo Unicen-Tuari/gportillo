@@ -6,32 +6,36 @@
   <title>Contacto</title>
 </head>
 <body>
-  <h1 class="borde">Contacto</h1>
+  <h1>Contacto</h1>
   <div class="imagenlateralIzq"> </div>
   <div class="imagenlateralDer"> </div>
 
   <form class= "formulario">
     <p class= "datos">
-      Nombre <input type="text" id="nombre" name="nombre" value="">
+      Nombre <input type="text" id="nombre" value="">
     </p>
     <p class= "datos">
-      Apellido  <input type="text" name="apellido" value="">
+      Apellido  <input type="text" id="apellido" value="">
     </p>
     <p class= "datos">
-      Correo electronico <input type="text" name="correo" value="">
+      Correo electronico <input type="text" id="correo" value="">
     </p>
 
     <p class= "datos">
       Sexo
-      <input type="radio" name="gender" value="Homnre" checked> Hombre
-      <input type="radio" name="gender" value="Mujer"> Mujer
-      <input type="radio" name="gender" value="Otro"> Otro
+      <input type="radio" name="gendero" value="Homnre" checked> Hombre
+      <input type="radio" name="gendero" value="Mujer"> Mujer
+      <input type="radio" name="gendero" value="Otro"> Otro
     </p>
     <p class= "datos">Comentario</p>
     <textarea name="comentario" rows="8" cols="40"></textarea>
+    <input type="submit" name="enviar" value="enviar">
   </form>
-  <input type="button" onclick="EnviarDatos" name="enviar" value="enviar">
+  <div class="footer">
+    <h1><a href="index.html">Volver al inicio</a></h1>
+  </div>
 
-<link rel="stylesheet" href="js/contacto.js" media="screen" title="no title" charset="utf-8">
+
+  <link rel="stylesheet" href="js/contacto.js" media="screen" title="no title" charset="utf-8">
 </body>
 </html>
