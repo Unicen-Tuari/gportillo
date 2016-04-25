@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!Este documento fue  hecho por PORTILLO, GASTÓN EZEQUIEL>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/rule1.css" media="screen" title="no title" charse--="utf-8">
+  <title>Ruleta</title>
+</head>
+<body>
+  <div class="encabezado">
+    <h1>Bienvenidos a la Ruleta</h1>
+    <h2>Saldo: <span id='saldo'> $100 </span></h2>
+    </div>
+    <div class= "apuesta">
+      Haga clik en el numero que quiera apostar
+      <input class="claseBotonNro" type="button"  name="numero" value="0" onclick= "obtenernro(this)" >
+      <input class="claseBotonNro" type="button"  name="numero" value="1" onClick= "obtenernro(this)" >
+      <input class="claseBotonNro" type="button"  name="numero" value="2" onClick= "obtenernro(this)" >
+      <input class="claseBotonNro" type="button"  name="numero" value="3" onClick= "obtenernro(this)" >
+      <input class="claseBotonNro" type="button"  name="numero" value="4" onClick= "obtenernro(this)" >
+      <input class="claseBotonNro" type="button"  name="numero" value="5" onClick= "obtenernro(this)" >
+      <input class="claseBotonNro" type="button"  name="numero" value="6" onClick= "obtenernro(this)" >
+      <input class="claseBotonNro" type="button"  name="numero" value="7" onClick= "obtenernro(this)" >
+      <input class="claseBotonNro" type="button"  name="numero" value="8" onClick= "obtenernro(this)" >
+      <input class="claseBotonNro" type="button"  name="numero" value="9" onClick= "obtenernro(this)" >
+    </div>
+  </div>
+
+  <input class="clasebotontirar" type="button" onClick="tirarRuleta()" name="tirar" value="Tirar">
+  <div class="mostrarResult">
+      <p> Numero que salio en la Ruleta: <span id="ruleta" value="0"></span> </p>
+      <p> Saldo fin de jugada <span id ="saldofinal"></span> </p>
+    </div>
+    <div>
+      <input class="clasebotontirar "type="button" disabled="true" onClick= "actualizarTablero()" name ="tirar" value="Tirar de nuevo">
+    </div>
+    <script type="text/javascript" src="Js/rule1.js"></script>
+  </body>
+  </html>
