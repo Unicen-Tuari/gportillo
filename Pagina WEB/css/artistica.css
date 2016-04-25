@@ -1,24 +1,35 @@
-body{
-  background-color: green;
-}
+
 
 .nombre{
   font-size: 25px;
   font-style: italic;
   font-family: sans-serif;
+  text-align: center;
 }
 
-.logo{
-  background-color: 00de00;
-  background-image: url("../imagenes/logo.jpg");
-  background-size: 200px 100px;
+.oferta{
+  background-color: red;
+  background-position: center;
+  margin-left: 200px;
+  margin-right: 180px;
+  border-top-width: 35px;
+}
+
+#logo{
+  background-image: url("../imagenes/cara de salvador izq.jpg");
+  background-size: 200px 400px;
   width: 200px;
-  height: 100px;
-  float:inherit;;
+  height: 400px;
+  float:left;
 }
 
-.fondologo{
-  background-color: green;
+#imagender{
+background-image: url("../imagenes/pinceles derecha.jpg");
+background-size: 200px 400px;
+width: 200px;
+height: 400px;
+float: right;
+
 }
 
 #navegador ul{
@@ -34,8 +45,8 @@ body{
 
 #navegador li a { /*le damos un marco, color y borde para cada elemento de la barra de navegacion*/
   padding: 2px 7px 2px 7px;
-  color: #666;
-  background-color: #eeeeee;
+  color: #252c25;
+  background-color: #00de00;
   border: 1px solid #ccc;
   text-decoration: none;
 }
