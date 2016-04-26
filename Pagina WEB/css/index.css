@@ -12,7 +12,7 @@ body{
 
 .total{
   font-size: 30px;
-}
+font-weight: bold;}
 
 #datos{
   border: 1px dotted #999;
