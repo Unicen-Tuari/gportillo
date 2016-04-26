@@ -24,19 +24,31 @@ h1{
 
 .imagenIzq{
   background-image: url("../imagenes/articulos2.jpg");
-  background-size: 200px 400px;
-  width: 200px;
+  background-size: 300px 400px;
+  background-repeat: no-repeat;
+  width: 300px;
   height: 400px;
   float: right;
 }
 
 .imagenDer{
   background-image: url("../imagenes/articulos1.jpg");
-  background-size: 200px 400px;
-  width: 200px;
+  background-size: 300px 400px;
+  background-repeat: no-repeat;
+  width: 300px;
   height: 400px;
   float: left;
 }
+ul{
+  text-align: center;
+  list-style-type: none;
+  display:inline-grid;
+  }
 li{
-  margin-left: 30px;
-}
+  padding: 4px;
+  }
+
+  .footer{
+    position: relative;;
+    bottom: 0px;
+  }
