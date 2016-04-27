@@ -1,5 +1,5 @@
 body{
-  background-color: #E6E6E6;
+  background-color: white;
 }
 
 .nombre{
@@ -19,7 +19,6 @@ font-weight: bold;}
   border-radius: 0;
   -webkit-appearance: none;
 }
-
 
 #oferta1, #oferta2, #oferta3{
   font-size: 25px;
@@ -44,6 +43,12 @@ font-weight: bold;}
 #oferta3{
   background-color: orange;
   width: 66.6%;
+}
+
+.logo{
+position: absolute;
+width: 150px;
+  float:left;
 }
 
 #imagenizq{
