@@ -12,3 +12,12 @@
 
   opacity: 0.8;
 }
+
+/*para centrar las imagenes del carousel*/
+.carousel-inner { text-align: center; }
+.carousel .item > img { display: inline-block; }
+
+.fuentecarousel{
+  background: #464646;
+  
+}
