@@ -2,32 +2,32 @@
 
 $(document).ready(function(){
 
-    // código de inicialización de eventos
-    function MostrarContenido(data) {
-      $("#infoamostrar").html(data);
-    }
+  // código de inicialización de eventos
+  function MostrarContenido(data) {
+    $("#infoamostrar").html(data);
+  }
 
-    function MostrarError(jqXHR, textStatus, errorThrown) {
-      alert("imposible cargar pagina");
-      $("#infoamostrar").html("servidor caido");
-    }
+  function MostrarError(jqXHR, textStatus, errorThrown) {
+    alert("imposible cargar pagina");
+    $("#infoamostrar").html("servidor caido");
+  }
 
-    function CargarAjax(direccion) {
-      // body...
+  function CargarAjax(direccion) {
+    // body...
 
-      $.ajax(
-        {
-          type:"GET",
-          url:direccion,
-          success: MostrarContenido,
-          dataType: "html",
-          error: MostrarError
-        }
-      );
-        }
-    direccion = "html/carousel.html",
-    $("#quienessomos").on("click", CargarAjax("html/nosotros.html"),
-    $("#articulos").on("click", CargarAjax("html/articulos.html"));
+    $.ajax(
+      {
+        type:"GET",
+        url:direccion,
+        success: MostrarContenido,
+        dataType: "html",
+        error: MostrarError
+      }
+    );
+  }
+  direccion = "html/carousel.html";
+  $("#quienessomos").on("click", CargarAjax("html/nosotros.html"));
+  $("#articulos").on("click", CargarAjax("html/articulos.html"));
 });
 
 
