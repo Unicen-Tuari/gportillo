@@ -19,12 +19,7 @@ $(document).ready(function(){
         {
           type:"GET",
           url:"html/nosotros.html",
-          success: function(data){
-            alert("entro al mostrar");
-            $("#infoamostrar").html(data);
-            /*dentro de infoamostrar quiero poner la foto del local y un escrito abajo*/
-            alert("deberia haber escrito en el html");
-          },
+          success: MostrarContenido,
           dataType: "html",
           error: MostrarError
         }
