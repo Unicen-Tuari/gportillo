@@ -1,7 +1,7 @@
 "use strict";
 
 $(document).ready(function(){
-/*CargarAjax("html/carousel.html");*/
+CargarAjax("html/carousel.html");
 
   // código de inicialización de eventos
   function MostrarContenido(data) {
