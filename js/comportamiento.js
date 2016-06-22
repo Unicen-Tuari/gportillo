@@ -27,7 +27,12 @@ $(document).ready(function(){
   }
   var direccion = "html/carousel.html";
   $("#quienessomos").on("click", CargarAjax("html/nosotros.html"));
-  $("#articulos").on("click", CargarAjax("html/articulos.html"));
+  $("#artescolares").on("click", CargarAjax("html/articulose.html"));
+  $("#artoficina").on("click", CargarAjax("html/articuloso.html"));
+  $("#contacto").on("click", CargarAjax("html/contacto.html"));
+  $("#acuarelas").on("click", CargarAjax("html/acuarelas.html"));
+  $("#acrilicos").on("click", CargarAjax("html/acrilicos.html"));
+  $("#pinceles").on("click", CargarAjax("html/pinceles.html"));
 });
 
 
