@@ -21,6 +21,6 @@
 
 }
 
-.collapse li{
+.collapse li, .logo{
   cursor:pointer;
 }

@@ -34,7 +34,7 @@ CargarAjax("html/carousel.html");
   $("#acuarelas").on("click", function(){CargarAjax("../html/acuarelas.html")});
   $("#acrilicos").on("click", function(){CargarAjax("../html/acrilicos.html")});
   $("#pinceles").on("click", function(){CargarAjax("../html/pinceles.html")});
-  $("logo").on("click", function(){CargarAjax("../html/carousel.html")});
+  $(".logo")[0].on("click", function(){CargarAjax("../html/carousel.html")});
 });
 
 
