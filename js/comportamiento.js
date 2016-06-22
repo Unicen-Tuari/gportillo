@@ -3,11 +3,9 @@
 $(document).ready(function(){
     // código de inicialización de eventos
     function MostrarContenido(data) {
-      alert("entro al mostrar");
       $("#infoamostrar").html(data);
-      /*dentro de infoamostrar quiero poner la foto del local y un escrito abajo*/
-      alert("deberia haber escrito en el html");
     }
+
     function MostrarError(jqXHR, textStatus, errorThrown) {
       alert("imposible cargar pagina");
       $("#infoamostrar").html("servidor caido");
