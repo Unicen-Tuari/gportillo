@@ -25,7 +25,7 @@ $(document).ready(function(){
         }
       );
         }
-    direccion = "html/carousel.html";
+    direccion = "html/carousel.html",
     $("#quienessomos").on("click", CargarAjax("html/nosotros.html"),
     $("#articulos").on("click", CargarAjax("html/articulos.html"));
 });
