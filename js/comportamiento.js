@@ -1,6 +1,7 @@
 "use strict";
 
 $(document).ready(function(){
+
     // código de inicialización de eventos
     function MostrarContenido(data) {
       $("#infoamostrar").html(data);
@@ -11,19 +12,20 @@ $(document).ready(function(){
       $("#infoamostrar").html("servidor caido");
     }
 
-    function CargarAjax() {
+    function CargarAjax(direccion) {
       // body...
+
       $.ajax(
         {
           type:"GET",
-          url:"html/nosotros.html",
+          url:direccion,
           success: MostrarContenido,
           dataType: "html",
           error: MostrarError
         }
       );
         }
-    $("#quienessomos").on("click", CargarAjax);
+    $("#quienessomos").on("click", CargarAjax("html/nosotros.html"));
 });
 
 
