@@ -27,13 +27,13 @@ $(document).ready(function(){
     );
   }
 
-  $("#quienessomos").on("click", function(){ CargarAjax("html/nosotros.html")});
-  $("#artescolares").on("click", function(){CargarAjax("html/articulose.html")});
-  $("#artoficina").on("click", function(){CargarAjax("html/articuloso.html")});
-  $("#contacto").on("click", function(){CargarAjax("html/contacto.html")});
-  $("#acuarelas").on("click", function(){CargarAjax("html/acuarelas.html")});
-  $("#acrilicos").on("click", function(){CargarAjax("html/acrilicos.html")});
-  $("#pinceles").on("click", function(){CargarAjax("html/pinceles.html")});
+  $("#quienessomos").on("click", function(){ CargarAjax("../html/nosotros.html")});
+  $("#artescolares").on("click", function(){CargarAjax("../html/articulose.html")});
+  $("#artoficina").on("click", function(){CargarAjax("../html/articuloso.html")});
+  $("#contacto").on("click", function(){CargarAjax("../html/contacto.html")});
+  $("#acuarelas").on("click", function(){CargarAjax("../html/acuarelas.html")});
+  $("#acrilicos").on("click", function(){CargarAjax("../html/acrilicos.html")});
+  $("#pinceles").on("click", function(){CargarAjax("../html/pinceles.html")});
 });
 
 
