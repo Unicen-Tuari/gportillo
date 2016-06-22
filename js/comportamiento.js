@@ -28,8 +28,8 @@ $(document).ready(function(){
   }
 
   $("#quienessomos").on("click", function(){ CargarAjax("../html/nosotros.html")});
-  $("#artescolares").on("click", function(){CargarAjax("../html/articulose.html")});
-  $("#artoficina").on("click", function(){CargarAjax("../html/articuloso.html")});
+  $("#articulose").on("click", function(){CargarAjax("../html/articulose.html")});
+  $("#articuloso").on("click", function(){CargarAjax("../html/articuloso.html")});
   $("#contacto").on("click", function(){CargarAjax("../html/contacto.html")});
   $("#acuarelas").on("click", function(){CargarAjax("../html/acuarelas.html")});
   $("#acrilicos").on("click", function(){CargarAjax("../html/acrilicos.html")});
