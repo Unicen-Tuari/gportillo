@@ -1,6 +1,7 @@
 "use strict";
 
 $(document).ready(function(){
+CargarAjax("html/carousel.html");
 
   // código de inicialización de eventos
   function MostrarContenido(data) {
@@ -25,14 +26,14 @@ $(document).ready(function(){
       }
     );
   }
-  var direccion = "html/carousel.html";
-  $("#quienessomos").on("click", CargarAjax("html/nosotros.html"));
-  $("#artescolares").on("click", CargarAjax("html/articulose.html"));
-  $("#artoficina").on("click", CargarAjax("html/articuloso.html"));
-  $("#contacto").on("click", CargarAjax("html/contacto.html"));
-  $("#acuarelas").on("click", CargarAjax("html/acuarelas.html"));
-  $("#acrilicos").on("click", CargarAjax("html/acrilicos.html"));
-  $("#pinceles").on("click", CargarAjax("html/pinceles.html"));
+
+  $("#quienessomos").on("click", function(){ CargarAjax("html/nosotros.html")});
+  $("#artescolares").on("click", function(){CargarAjax("html/articulose.html")});
+  $("#artoficina").on("click", function(){CargarAjax("html/articuloso.html")});
+  $("#contacto").on("click", function(){CargarAjax("html/contacto.html")});
+  $("#acuarelas").on("click", function(){CargarAjax("html/acuarelas.html")});
+  $("#acrilicos").on("click", function(){CargarAjax("html/acrilicos.html")});
+  $("#pinceles").on("click", function(){CargarAjax("html/pinceles.html")});
 });
 
 
