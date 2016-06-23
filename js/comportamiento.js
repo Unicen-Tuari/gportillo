@@ -28,6 +28,7 @@ CargarAjax("html/carousel.html");
   }
 
   $("#quienessomos").on("click", function(){ CargarAjax("../html/nosotros.html")});
+  $("#artistica").on("click", function(){CargarAjax("../html/materialesartistica.html")});
   $("#articulose").on("click", function(){CargarAjax("../html/articulose.html")});
   $("#articuloso").on("click", function(){CargarAjax("../html/articuloso.html")});
   $("#contacto").on("click", function(){CargarAjax("../html/contacto.html")});
