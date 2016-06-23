@@ -32,9 +32,10 @@ CargarAjax("html/carousel.html");
   $("#articulose").on("click", function(){CargarAjax("../html/articulose.html")});
   $("#articuloso").on("click", function(){CargarAjax("../html/articuloso.html")});
   $("#contacto").on("click", function(){CargarAjax("../html/contacto.html")});
-  $("#acuarelas").on("click", function(){CargarAjax("../html/acuarelas.html")});
-  $("#acrilicos").on("click", function(){CargarAjax("../html/acrilicos.html")});
-  $("#pinceles").on("click", function(){CargarAjax("../html/pinceles.html")});
+  $("#kescolar").on("click", function(){CargarAjax("../html/kescolar.html")});
+  $("#kdibujo").on("click", function(){CargarAjax("../html/kdibujo.html")});
+  $("#kpinceles").on("click", function(){CargarAjax("../html/kpinceles.html")});
+  $("#kdestacado").on("click", function(){CargarAjax("../html/kdestacado.html")});
   $("#salvador").on("click", function(){CargarAjax("../html/carousel.html")});
 });
 
