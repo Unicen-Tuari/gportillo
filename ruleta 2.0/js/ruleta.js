@@ -39,7 +39,10 @@ function numero(valor, cantnum){ // tengo que agregar que la mitad para arriba s
   return {
     numero: valor,
     paroimpar:function () {
-      if (this.numero % 2 === 0) {
+      if(this.numero === 0){
+        return "es cero"
+      }
+      else if (this.numero % 2 === 0) {
         return "par";
       }
       else {
@@ -47,74 +50,75 @@ function numero(valor, cantnum){ // tengo que agregar que la mitad para arriba s
       }
     },
     color: function(){
-      if (this.valor == 0)
-      return"verde"
-      else if (this.paridad = "par")
-      return "rojo"
-      else
-      return "negro"
+      if (this.numero === 0){
+        return "verde"
+      }
+      else if (this.paroimpar() === "par"){
+        return "rojo"
+      }
+      else{
+        return "negro"
+      }
     }
   }
 }
 
-  /********************************/
+/********************************/
 
 
-  /**********************************/
-  /*          OBJETO APUESTA       */
-  function apuesta(tipo, costo_apuesta){
-    return {
-      valor_apuesta:costo_apuesta,
-      tipo_apuesta:tipo,
-      aumentar_apuesta: function () {
-        this.valor_apuesta= this.valor_apuesta + costo_apuesta
-      },
-      devolver_valorapuesta: function () {
-        return this.valor_apuesta
-      },
-      devolver_tipoapuesta: function () {
-        return this.tipo_apuesta
-      }
+/**********************************/
+/*          OBJETO APUESTA       */
+function apuesta(tipo, costo_apuesta){
+  return {
+    valor_apuesta:costo_apuesta,
+    tipo_apuesta:tipo,
+    aumentar_apuesta: function () {
+      this.valor_apuesta= this.valor_apuesta + costo_apuesta
+    },
+    devolver_valorapuesta: function () {
+      return this.valor_apuesta
+    },
+    devolver_tipoapuesta: function () {
+      return this.tipo_apuesta
     }
   }
-  /**********************************/
+}
+/**********************************/
 
-  /**********************************/
-  /*          OBJETO TABLERO       */
+/**********************************/
+/*          OBJETO TABLERO       */
 
-  function tablero(cantnum) {
-    var arrenum = [];
-    for (var i = 0; i < cantnum; i++) {
-      var num = new numero(i, cantnum);  //creamos los objetos numeros
-      arrenum.push(num);        //los agregamos en el arreglo
+function tablero(cantnum) {
+  var arrenum = [];
+  for (var i = 0; i < cantnum; i++) {
+    var num = new numero(i, cantnum);  //creamos los objetos numeros
+    arrenum.push(num);        //los agregamos en el arreglo
 
-    }
-    return{
-      arreglon: arrenum,
-      CargarAjax: function() {
-        // body...
-
-        $.ajax(
-          {
-            type:"GET",
-            url:"../html/jugador.html",
-            success: function(datos){
-              $("#mostrarapuestas").innerHTML = datos;
-            },
-            dataType: "html",
-            error: function(){
-              alert ("error")
-               }
-          }
-        );
-      }
+  }
+  return{
+    arreglon: arrenum,
+    mostrartablero: function() {
+      $("#cant").css("display", "none");
+      $("#ocultar").css("display", "block");
+      mostrarnumeros(this.arreglon);
     }
   }
+}
 
-  function cargartodo(){
-    var cantn = $("#cantidad").value;
-    var tablerito = new tablero(cantn);
-    tablerito.CargarAjax();
+function cargartodo(){
+  var cantn = $("#cantidad").val();
+  var tablerito = new tablero(cantn);
+  tablerito.mostrartablero();
+  
+}
+
+$("#entrar").on("click", function(){cargartodo()});
+
+/***************************************************/
+function mostrarnumeros(arreglon) {
+  for (var i = 0; i < arreglon.length; i++) {
+    var agregarclase= '<input type="button" class="'+arreglon[i].color()+' numero col-md-4 " value="'+i+'"></input>'
+    $("#mostrarnumeros").append(agregarclase)
   }
 
-  $("#entrar").on("click", function(){cargartodo()});
+}
