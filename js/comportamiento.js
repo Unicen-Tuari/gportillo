@@ -35,7 +35,7 @@ CargarAjax("html/carousel.html");
   $("#kescolar").on("click", function(){CargarAjax("../html/kescolar.html")});
   $("#kdibujo").on("click", function(){CargarAjax("../html/kdibujo.html")});
   $("#kpinceles").on("click", function(){CargarAjax("../html/kpinceles.html")});
-  $("#kdestacado").on("click", function(){CargarAjax("../html/kdestacado.html")});
+  $("#destacado").on("click", function(){CargarAjax("../html/kdestacado.html")});
   $("#salvador").on("click", function(){CargarAjax("../html/carousel.html")});
 });
 
