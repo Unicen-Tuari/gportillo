@@ -31,13 +31,20 @@ h2{
   display: none;
 }
 
-.numero{
-  font-size: 20px;
+.numero, .negro, .rojo, .verde{
   color: white;
 }
 
 .negro{
   background-color: black;
+}
+.pares, .impares, .primitad, .segmitad, .pleno, .numero, .negro, .rojo, .verde{
+  font-size: 20px;
+}
+
+.suerte{
+  font-size: 35px;
+  font-style: italic;
 }
 
 .rojo{
