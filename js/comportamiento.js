@@ -6,7 +6,7 @@ CargarAjax("html/carousel.html");
   // código de inicialización de eventos
   function MostrarContenido(data) {
     $("#infoamostrar").html(data);
-    $("#cargar").on("click", function(){
+    $("#guardar").on("click", function(){
       cargarprod();
     })
   }
@@ -56,9 +56,6 @@ function mostrarprod(){
     }
   });
 }
-
-
-
 
 function cargarprod(){
   var grupo = 124; //yo soy el 12
