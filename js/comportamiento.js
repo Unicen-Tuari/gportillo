@@ -63,7 +63,7 @@ function cargarprod(){
     codigo: null,
     producto: null,
     precio: null
-  };
+  },
 
   prod.codigo = $("#codprod").val();
   prod.producto = $("#producto").val();
@@ -71,7 +71,7 @@ function cargarprod(){
   var informacion = {
     "group": grupo,
     "thing": prod
-  };
+  },
 
   $.ajax({
     method: "POST",
@@ -83,7 +83,7 @@ function cargarprod(){
       alert ("se cargo correctamente");
     },
     error:function(jqxml, status, errorThrown){
-      alert ("fallo la carga");
+      alert ("fallo la carga al servidor");
     }
   });
 }
