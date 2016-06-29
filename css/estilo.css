@@ -22,6 +22,15 @@
 .nosotros, .tituloarticulo{
   color: white;
 }
+
+.nosotros{
+  width: 650px;
+  margin: 0 auto;
+}
+
+.cargar{
+  color: black;
+}
 /*.container{
   position: absolute;
 }
