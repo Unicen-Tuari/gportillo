@@ -19,6 +19,7 @@
 .fuentecarousel{
   background: #464646;
   width: auto;
+  height: auto;
 }
 
 .collapse li, .logo{
