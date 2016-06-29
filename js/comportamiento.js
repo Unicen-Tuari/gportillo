@@ -43,7 +43,7 @@ CargarAjax("html/carousel.html");
 });
 
 function mostrarprod(){
-  var grupo = 47;
+  var grupo = 124;
   $.ajax({
     method: "GET",
     dataType: 'JSON',
