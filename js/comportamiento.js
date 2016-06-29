@@ -4,20 +4,6 @@ $(document).ready(function(){
 CargarAjax("html/carousel.html");
 
   // código de inicialización de eventos
-  $("#quienessomos").on("click", function(){ CargarAjax("../html/nosotros.html")});
-  $("#artistica").on("click", function(){CargarAjax("../html/materialesartistica.html")});
-  $("#articulose").on("click", function(){CargarAjax("../html/articulose.html")});
-  $("#articuloso").on("click", function(){CargarAjax("../html/articuloso.html")});
-  $("#contacto").on("click", function(){CargarAjax("../html/contacto.html")});
-  $("#kescolar").on("click", function(){CargarAjax("../html/kescolar.html")});
-  $("#kdibujo").on("click", function(){CargarAjax("../html/kdibujo.html")});
-  $("#kpinceles").on("click", function(){CargarAjax("../html/kpinceles.html")});
-  $("#destacado").on("click", function(){CargarAjax("../html/kdestacado.html")});
-  $("#salvador").on("click", function(){CargarAjax("../html/carousel.html")});
-
-
-
-
   function MostrarContenido(data) {
     $("#infoamostrar").html(data);
     $("#cargar").on("click", function(){
@@ -44,7 +30,16 @@ CargarAjax("html/carousel.html");
     );
   }
 
-
+  $("#quienessomos").on("click", function(){ CargarAjax("../html/nosotros.html")});
+  $("#artistica").on("click", function(){CargarAjax("../html/materialesartistica.html")});
+  $("#articulose").on("click", function(){CargarAjax("../html/articulose.html")});
+  $("#articuloso").on("click", function(){CargarAjax("../html/articuloso.html")});
+  $("#contacto").on("click", function(){CargarAjax("../html/contacto.html")});
+  $("#kescolar").on("click", function(){CargarAjax("../html/kescolar.html")});
+  $("#kdibujo").on("click", function(){CargarAjax("../html/kdibujo.html")});
+  $("#kpinceles").on("click", function(){CargarAjax("../html/kpinceles.html")});
+  $("#destacado").on("click", function(){CargarAjax("../html/kdestacado.html")});
+  $("#salvador").on("click", function(){CargarAjax("../html/carousel.html")});
 
 
 function mostrarprod(){
