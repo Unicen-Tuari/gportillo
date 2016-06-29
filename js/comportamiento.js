@@ -6,6 +6,9 @@ CargarAjax("html/carousel.html");
   // código de inicialización de eventos
   function MostrarContenido(data) {
     $("#infoamostrar").html(data);
+    $("#articulose").on("click", function(){
+      listadeproductos();
+    })
   }
 
   function MostrarError(jqXHR, textStatus, errorThrown) {
@@ -38,6 +41,66 @@ CargarAjax("html/carousel.html");
   $("#destacado").on("click", function(){CargarAjax("../html/kdestacado.html")});
   $("#salvador").on("click", function(){CargarAjax("../html/carousel.html")});
 });
+
+function listadeproductos(){
+  var grupo = 124; //el mio es el 12
+  $.ajax({
+    method: "GET",
+    dataType: 'JSON',
+    url: "http://web-unicen.herokuapp.com/api/group/" + grupo,
+    success:function (prod){
+      crearTabla(prod);
+    },
+    error:function(jqxml, status, errorThrown){
+      console.log(errorThrown);
+    }
+  });
+}
+
+
+function cargarprod(){
+  var grupo = 124; //el mio es el 12
+  var prod = {
+    codigo: null,
+    descripcion: null,
+    precio: null
+  };
+  var datos = $(".dato");
+  for (var i = 0; i < datos.length; i++) {
+    if (datos[i].value == "") {
+      alert("que paso faltan datos")
+    }
+  }
+  cod.producto = datos[0].value;
+  marca.descripcion = datos[1].value;
+  prod.precio = datos[2].value;
+  var informacion = {
+    "group": grupo,
+    "thing": prod
+  };
+  $.ajax({
+    method: "POST",
+    dataType: 'JSON',
+    data: JSON.stringify(informacion),
+    contentType: "application/json; charset=utf-8",
+    url: "http://web-unicen.herokuapp.com/api/create",
+    success: function(resultData){
+      console.log(resultData.information);
+    },
+    error:function(jqxml, status, errorThrown){
+      console.log(errorThrown);
+    }
+  });
+}
+
+
+
+
+
+
+
+
+
 
 
 /*------------------------------------------------------*/
