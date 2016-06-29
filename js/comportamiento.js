@@ -65,9 +65,9 @@ function cargarprod(){
     precio: null
   };
 
-  prod.codigo = $("#codprod").val();
-  prod.producto = $("#producto").val();
-  prod.precio = $("#precio").val();
+  prod.codigo = $("#codprod").value();
+  prod.producto = $("#producto").value();
+  prod.precio = $("#precio").value();
   var informacion = {
     "group": grupo,
     "thing": prod
