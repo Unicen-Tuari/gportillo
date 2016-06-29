@@ -40,7 +40,7 @@ CargarAjax("html/carousel.html");
   $("#kpinceles").on("click", function(){CargarAjax("../html/kpinceles.html")});
   $("#destacado").on("click", function(){CargarAjax("../html/kdestacado.html")});
   $("#salvador").on("click", function(){CargarAjax("../html/carousel.html")});
-
+});
 
 function mostrarprod(){
   var grupo = 124;
