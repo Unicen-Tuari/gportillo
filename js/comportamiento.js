@@ -7,7 +7,7 @@ CargarAjax("html/carousel.html");
   function MostrarContenido(data) {
     $("#infoamostrar").html(data);
     $("#articulose").on("click", function(){
-      listadeproductos();
+      cargarprod();
     })
   }
 
@@ -42,8 +42,8 @@ CargarAjax("html/carousel.html");
   $("#salvador").on("click", function(){CargarAjax("../html/carousel.html")});
 });
 
-function listadeproductos(){
-  var grupo = 124; //el mio es el 12
+function mostrarprod(){
+  var grupo = 47;
   $.ajax({
     method: "GET",
     dataType: 'JSON',
@@ -58,21 +58,23 @@ function listadeproductos(){
 }
 
 
+
+
 function cargarprod(){
-  var grupo = 124; //el mio es el 12
+  var grupo = 124; //yo soy el 12
   var prod = {
     codigo: null,
-    descripcion: null,
+    producto: null,
     precio: null
   };
   var datos = $(".dato");
   for (var i = 0; i < datos.length; i++) {
     if (datos[i].value == "") {
-      alert("que paso faltan datos")
+      alert("FALTAN CARGAR DATOS")
     }
   }
-  cod.producto = datos[0].value;
-  marca.descripcion = datos[1].value;
+  prod.codigo = datos[0].value;
+  prod.producto = datos[1].value;
   prod.precio = datos[2].value;
   var informacion = {
     "group": grupo,
@@ -92,33 +94,3 @@ function cargarprod(){
     }
   });
 }
-
-
-
-
-
-
-
-
-
-
-
-/*------------------------------------------------------*/
-/*agregar elementos a la lista de articulos*/
-function Agregarart() {
-  var textoart = document.getElementById("art"); // Obtengo el campo de texto con la tarea
-  var lista = document.getElementById("listaDeart"); // Obtengo la lista de tareas
-  var cantidad = lista.length;
-  var item = document.createElement("li"); //Creo un nuevo item para la lista
-  item.innerHTML = textoart.value; //Completo el item con el texto de la tarea
-  lista.insertBefore(item, lista.getElementsByTagName("li")[cantidad]); //pongo el articulo al final
-
-}
-
-/*---------------------FIN--AGREGAR---------------------*/
-
-/*------------------------------------------------------*/
-/*--------------------Contato---------------------------*/
-
-
-/*---------------------FIN--CONTACTO--------------------*/
