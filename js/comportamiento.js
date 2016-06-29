@@ -60,9 +60,9 @@ function mostrarprod(){
 function cargarprod(){
   var grupo = 124; //yo soy el 12
   var prod = {
-    codigo: null,
-    producto: null,
-    precio: null
+    codigo: "",
+    producto: "",
+    precio: ""
   };
 
   prod.codigo = $("#codprod").val();
