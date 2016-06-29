@@ -6,7 +6,7 @@ CargarAjax("html/carousel.html");
   // código de inicialización de eventos
   function MostrarContenido(data) {
     $("#infoamostrar").html(data);
-    $("#articulose").on("click", function(){
+    $("#cargar").on("click", function(){
       cargarprod();
     })
   }
@@ -67,19 +67,15 @@ function cargarprod(){
     producto: null,
     precio: null
   };
-  var datos = $(".dato");
-  for (var i = 0; i < datos.length; i++) {
-    if (datos[i].value == "") {
-      alert("FALTAN CARGAR DATOS")
-    }
-  }
-  prod.codigo = datos[0].value;
-  prod.producto = datos[1].value;
-  prod.precio = datos[2].value;
+
+  prod.codigo = $("#codprod").value;
+  prod.producto = $("#producto").value;
+  prod.precio = $("#precio").value;
   var informacion = {
     "group": grupo,
     "thing": prod
   };
+
   $.ajax({
     method: "POST",
     dataType: 'JSON',
