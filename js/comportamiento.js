@@ -87,10 +87,10 @@ function cargarprod(){
     contentType: "application/json; charset=utf-8",
     url: "http://web-unicen.herokuapp.com/api/create",
     success: function(resultData){
-      console.log(resultData.information);
+      alert ("se cargo correctamente");
     },
     error:function(jqxml, status, errorThrown){
-      console.log(errorThrown);
+      alert ("fallo la carga");
     }
   });
 }

@@ -36,6 +36,11 @@
   background-color: #464646;
 }
 
+.container{
+  background-color: #1E1818;
+  opacity: 0.5;
+
+}
 table {
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
   font-size: 12px;
