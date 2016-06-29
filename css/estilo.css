@@ -22,10 +22,10 @@
 .nosotros, .tituloarticulo{
   color: white;
 }
-.container{
+/*.container{
   position: absolute;
 }
-
+*/
 .collapse li, .logo{
   cursor:pointer;
 }
@@ -39,6 +39,7 @@
 .container{
   background-color: #1E1818;
   opacity: 0.99;
+  color: white;
 
 }
 table {
