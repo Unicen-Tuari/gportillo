@@ -21,6 +21,10 @@
   height: auto;
 }
 
+.nosotros{
+  color: white;
+}
+
 .collapse li, .logo{
   cursor:pointer;
 }
