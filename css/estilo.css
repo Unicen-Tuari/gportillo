@@ -14,6 +14,7 @@
 /*para centrar las imagenes del carousel*/
 .carousel-inner { text-align: center; }
 .carousel .item > img { display: inline-block; }
+.item{ display: inline-block; }
 .fuentecarousel, .nosotros{
   background: #464646;
   height: auto;
