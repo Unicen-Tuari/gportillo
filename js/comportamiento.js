@@ -64,7 +64,6 @@ function cargarprod(){
     producto: "",
     precio: ""
   };
-
   prod.codigo = $("#codprod").val();
   prod.producto = $("#producto").val();
   prod.precio = $("#precio").val();
@@ -80,6 +79,7 @@ function cargarprod(){
     contentType: "application/json; charset=utf-8",
     url: "http://web-unicen.herokuapp.com/api/create",
     success: function(resultData){
+    console.log(resultData); //a ver que muestra
       alert ("se cargo correctamente");
     },
     error:function(jqxml, status, errorThrown){
