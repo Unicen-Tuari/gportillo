@@ -53,6 +53,7 @@ function cargararticulos(prod){
     articulos +=  '<td>' + prod.information[i]["thing"].codigo + '</td>';
     articulos +=  '<td>' + prod.information[i]["thing"].producto + '</td>';
     articulos +=  '<td>' + prod.information[i]["thing"].precio + '</td>';
+    articulos +=  '<td><button class="btn botelim" ><span class="glyphicon glyphicon-search" aria-hidden="true"></span> </button> </td>'
   }
   $("#contenido").html(articulos);
 }
@@ -66,6 +67,7 @@ function mostrarprod(){
     dataType: 'JSON',
     url: "http://web-unicen.herokuapp.com/api/group/" + grupo,
     success:function (prod){
+      console.log(prod);
       cargararticulos(prod);
     },
     error:function(jqxml, status, errorThrown){
