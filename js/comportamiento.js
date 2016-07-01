@@ -136,6 +136,7 @@ function elimprod(boton,id) {
       url: "http://web-unicen.herokuapp.com/api/create",
       success: function(resultData){
         console.log(resultData); //a ver que muestra
+        mostrarprod();
         alert ("se cargo correctamente");
       },
       error:function(jqxml, status, errorThrown){
