@@ -22,7 +22,7 @@ function MostrarContenido(data) {
 
   var tabla=$("#contenido")
   if (tabla.length === 1) {
-    cargarprod();
+    mostrarprod();
   }
   $("#guardar").on("click", function(){
     cargarprod();
