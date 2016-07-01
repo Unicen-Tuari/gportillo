@@ -1,34 +1,7 @@
 "use strict";
 
 $(document).ready(function(){
-CargarAjax("html/carousel.html");
-
-  // código de inicialización de eventos
-  function MostrarContenido(data) {
-  //  $("#infoamostrar").html(data);
-    $("#guardar").on("click", function(){
-      cargarprod();
-    })
-  }
-
-  function MostrarError(jqXHR, textStatus, errorThrown) {
-    alert("imposible cargar pagina");
-    $("#infoamostrar").html("servidor caido");
-  }
-
-  function CargarAjax(direccion) {
-    // body...
-
-    $.ajax(
-      {
-        type:"GET",
-        url:direccion,
-        success: MostrarContenido,
-        dataType: "html",
-        error: MostrarError
-      }
-    );
-  }
+  CargarAjax("html/carousel.html");
 
   $("#quienessomos").on("click", function(){ CargarAjax("../html/nosotros.html")});
   $("#artistica").on("click", function(){CargarAjax("../html/materialesartistica.html")});
@@ -42,18 +15,46 @@ CargarAjax("html/carousel.html");
   $("#salvador").on("click", function(){CargarAjax("../html/carousel.html")});
 });
 
+//funcion cargar ajax
+// código de inicialización de eventos
+function MostrarContenido(data) {
+  //  $("#infoamostrar").html(data);
+  $("#guardar").on("click", function(){
+    cargarprod();
+  })
+}
+
+function MostrarError(jqXHR, textStatus, errorThrown) {
+  alert("imposible cargar pagina");
+  $("#infoamostrar").html("servidor caido");
+}
+
+function CargarAjax(direccion) {
+  // body...
+
+  $.ajax(
+    {
+      type:"GET",
+      url:direccion,
+      success: MostrarContenido,
+      dataType: "html",
+      error: MostrarError
+    }
+  );
+}
+
 
 
 //get del servidor
 function cargararticulos(prod){
-var articulos= "";
-for (var i = 0; i < prod.information.length; i++){
-  articulos += '<tr>';
-  articulos +=  '<td>' + prod.information[i]["thing"].codigo + '</td>';
-  articulos +=  '<td>' + prod.information[i]["thing"].producto + '</td>';
-  articulos +=  '<td>' + prod.information[i]["thing"].precio + '</td>';
-}
-$("#contenido").html(articulos);
+  var articulos= "";
+  for (var i = 0; i < prod.information.length; i++){
+    articulos += '<tr>';
+    articulos +=  '<td>' + prod.information[i]["thing"].codigo + '</td>';
+    articulos +=  '<td>' + prod.information[i]["thing"].producto + '</td>';
+    articulos +=  '<td>' + prod.information[i]["thing"].precio + '</td>';
+  }
+  $("#contenido").html(articulos);
 }
 
 
@@ -102,7 +103,7 @@ function cargarprod(){
     contentType: "application/json; charset=utf-8",
     url: "http://web-unicen.herokuapp.com/api/create",
     success: function(resultData){
-    console.log(resultData); //a ver que muestra
+      console.log(resultData); //a ver que muestra
       alert ("se cargo correctamente");
     },
     error:function(jqxml, status, errorThrown){
