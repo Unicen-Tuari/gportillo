@@ -5,7 +5,7 @@ CargarAjax("html/carousel.html");
 
   // código de inicialización de eventos
   function MostrarContenido(data) {
-    $("#infoamostrar").html(data);
+  //  $("#infoamostrar").html(data);
     $("#guardar").on("click", function(){
       cargarprod();
     })
@@ -42,6 +42,22 @@ CargarAjax("html/carousel.html");
   $("#salvador").on("click", function(){CargarAjax("../html/carousel.html")});
 });
 
+
+
+//get del servidor
+function cargararticulos(prod){
+var articulos= "";
+for (var i = 0; i < prod.information.length; i++) {
+  articulos += '<tr>';
+  articulos +=  '<td>' prod.information[i]["thing"].codigo + '</td>';
+  articulos +=  '<td>' prod.information[i]["thing"].producto + '</td>';
+  articulos +=  '<td>' prod.information[i]["thing"].precio + '</td>';
+}
+
+}
+
+
+
 function mostrarprod(){
   var grupo = 124;
   $.ajax({
@@ -49,7 +65,7 @@ function mostrarprod(){
     dataType: 'JSON',
     url: "http://web-unicen.herokuapp.com/api/group/" + grupo,
     success:function (prod){
-      crearTabla(prod);
+      cargararticulos(prod);
     },
     error:function(jqxml, status, errorThrown){
       console.log(errorThrown);
@@ -57,6 +73,13 @@ function mostrarprod(){
   });
 }
 
+
+
+
+////
+
+
+/// anda joya el cargar al servidor
 function cargarprod(){
   var grupo = 124; //yo soy el 12
   var prod = {
@@ -87,3 +110,5 @@ function cargarprod(){
     }
   });
 }
+
+// hasta aca esta jotita
