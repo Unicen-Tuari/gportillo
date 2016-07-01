@@ -62,7 +62,7 @@ function cargararticulos(prod){
   }
   $("#contenido").html(articulos); //cargo el html
   var eliminar= $(".botelim");
-  for (var i = 0; i < botelim.length; i++) {
+  for (var i = 0; i < eliminar.length; i++) {
     elimprod(botonlim[i],prod.information[i]["_id"]) //le agrego la funcion de eliminar a cada boton
   }
 }
