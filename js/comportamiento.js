@@ -47,7 +47,7 @@ CargarAjax("html/carousel.html");
 //get del servidor
 function cargararticulos(prod){
 var articulos= "";
-for (var i = 0; i < prod.information.length; i++)
+for (var i = 0; i < prod.information.length; i++){
   articulos += '<tr>';
   articulos +=  '<td>' + prod.information[i]["thing"].codigo + '</td>';
   articulos +=  '<td>' + prod.information[i]["thing"].producto + '</td>';
