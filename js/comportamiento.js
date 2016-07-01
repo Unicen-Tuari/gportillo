@@ -53,7 +53,7 @@ for (var i = 0; i < prod.information.length; i++) {
   articulos +=  '<td>' prod.information[i]["thing"].producto + '</td>';
   articulos +=  '<td>' prod.information[i]["thing"].precio + '</td>';
 }
-
+$("#contenido").html(articulos);
 }
 
 
