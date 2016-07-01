@@ -18,7 +18,7 @@ $(document).ready(function(){
 //funcion cargar ajax
 // código de inicialización de eventos
 function MostrarContenido(data) {
-  //  $("#infoamostrar").html(data);
+  $("#infoamostrar").html(data);
   $("#guardar").on("click", function(){
     cargarprod();
   })
