@@ -60,14 +60,13 @@ function mostrarprod(){
 function cargarprod(){
   var grupo = 124; //yo soy el 12
   var prod = {
-    codigo: null,
-    producto: null,
-    precio: null
+    codigo: "",
+    producto: "",
+    precio: ""
   };
-
-  prod.codigo = $("#codprod").value;
-  prod.producto = $("#producto").value;
-  prod.precio = $("#precio").value;
+  prod.codigo = $("#codprod").val();
+  prod.producto = $("#producto").val();
+  prod.precio = $("#precio").val();
   var informacion = {
     "group": grupo,
     "thing": prod
@@ -80,10 +79,11 @@ function cargarprod(){
     contentType: "application/json; charset=utf-8",
     url: "http://web-unicen.herokuapp.com/api/create",
     success: function(resultData){
+    console.log(resultData); //a ver que muestra
       alert ("se cargo correctamente");
     },
     error:function(jqxml, status, errorThrown){
-      alert ("fallo la carga");
+      alert ("fallo la carga al servidor");
     }
   });
 }
