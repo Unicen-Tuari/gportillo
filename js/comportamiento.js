@@ -25,7 +25,7 @@ function MostrarContenido(data) {
     mostrarprod();
   }
   $("#guardar").on("click", function(){
-    cargarprod();
+    guardarprod();
   })
 }
 
@@ -66,6 +66,8 @@ function cargararticulos(prod){
     elimprod(eliminar[i],prod.information[i]["_id"]) //le agrego la funcion de eliminar a cada boton
   }
 }
+//fin del get
+
 
 function elimprod(boton,id) {
   $(boton).on("click",function(){
@@ -79,7 +81,7 @@ function elimprod(boton,id) {
       method:"DELETE",
       success: function(resultData){
         console.log(resultData);
-        cargararticulos();
+        mostrarprod();
       },
       error:function(jqxml, status, errorThrown){
         alert('Error!');
@@ -111,7 +113,7 @@ function elimprod(boton,id) {
 
 
   /// anda joya el cargar al servidor
-  function cargarprod(){
+  function guardarprod(){
     var grupo = 124; //yo soy el 12
     var prod = {
       codigo: "",
