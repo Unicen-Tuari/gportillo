@@ -4,7 +4,7 @@ var apuestas = [];
 const costo_apuesta =1; //este va a ser el valor de las apuesta. en este caso sera de 1
 var jugador1 = new jugador;
 var jugador2 = new jugador;
-var jugadorAct = 1;
+var jugadorAct = jugador1;
 
 /**********************************/
 /*          OBJETO JUGADOR       */
@@ -21,6 +21,10 @@ function jugador(){//negro, rojo, par, impar, menor, mayor, pleno
       return this.apuesta;
     },
     sumarapuesta: function(tipoapuesta) {
+      if (this.credito === 0){
+        return alert("no posee sufieciente credito")
+      }
+      this.disminuirCredito();
       var noesta=true;
       for (var i = 0; i < this.apuesta.length; i++) {
         if (this.apuesta[i].devolver_tipoapuesta() === tipoapuesta){
@@ -92,7 +96,7 @@ function numero(valor, cantnum){ // tengo que agregar que la mitad para arriba s
 /*          OBJETO APUESTA       */
 function apuesta(tipo, costo_apuesta){
   return {
-    valor_apuesta:1,
+    valor_apuesta:1, //aca seria costo apuesta
     tipo_apuesta:tipo,
     aumentar_apuesta: function () {
       this.valor_apuesta = this.valor_apuesta + 1;
@@ -155,50 +159,60 @@ function mostrarnumeros(arreglon) {
   apu = apu + '<input type="button" id="nimpar" class="impares col-md-6" value="impares"></input>';
   apu = apu + '<input type="button" id="mitad1" class="primitad col-md-6" value="'+"1-"+medio+'"></input>';
   apu = apu + '<input type="button" id="mitad2" class="segmitad col-md-6" value="'+otromedio+'-'+final+'"></input>';
-  apu = apu + '<input type="button" id="jugador" class="suerte col-md-6" value="Jugador 2"></input>';
+  apu = apu + '<button id="jugador" class="suerte col-md-6">Jugador 1</button>';
   apu = apu + '<input type="button" id="suerte" class="suerte col-md-6" value="SUERTE!"></input>';
   $("#mostrarapuestas").append(apu);
   agregarapuesta();
 }
 
 function agregarapuesta(){
-  $("#nrojo").on("click", function (){cargarAjugador(jugadorAct, "rojo")});
-  $("#nnegro").on("click", function (){cargarAjugador(jugadorAct, "negro")});
-  $("#npar").on("click", function (){cargarAjugador(jugadorAct, "par")});
-  $("#nimpar").on("click", function (){cargarAjugador(jugadorAct, "impar")});
-  $("#mitad1").on("click", function (){cargarAjugador(jugadorAct, "primitad")});
-  $("#mitad2").on("click", function (){cargarAjugador(jugadorAct, "segmitad")});
+  $("#nrojo").on("click", function (){jugadorAct.sumarapuesta("rojo")});
+  $("#nnegro").on("click", function (){jugadorAct.sumarapuesta("negro")});
+  $("#npar").on("click", function (){jugadorAct.sumarapuesta("par")});
+  $("#nimpar").on("click", function (){jugadorAct.sumarapuesta("impar")});
+  $("#mitad1").on("click", function (){jugadorAct.sumarapuesta("primitad")});
+  $("#mitad2").on("click", function (){jugadorAct.sumarapuesta("segmitad")});
   $("#jugador").on("click", function (){cambiarjugador()});
+
+  //----------------------este seria para que juege-----------//
+
+  //---------------------------------------------------------//
 
   var arreglon = $(".numero");
   for (var i = 0; i < arreglon.length; i++) {
     asignarvalor(i, arreglon[i])
   }
 }
+
+//---------------- hecho hoy
+$("#suerte").on("click", function(){mostrarApuestas()});
+
+function mostrarApuestas(){
+  var string = "";
+  for (var i = 0; i < apuestas.length; i++) {
+    string = string + '<span>'+apuestas[i].getType()+': $'+apuestas[i].getValor()+'</span>';
+  }
+  string = string + '<span  id="ganador"></span>';
+  $(".tablaDeApuestas").html(string);
+  string = 'Credito = $'+player.getCredit();
+  $("#credito").html(string);
+}
+
 function asignarvalor(nro, boton){
   boton.onclick = function(){
     cargarAjugador(jugadorAct,nro);
   }
 }
 
-function cargarAjugador(jugador, tapuesta){
-  if (jugador === 1){
-    jugador1.sumarapuesta(tapuesta)
-  }
-  else{
-    jugador2.sumarapuesta(tapuesta)
-  }
-}
-
 function cambiarjugador(){
-  if (jugadorAct === 1){
-    jugadorAct = 2;
-    $("#nrojugador").html("Jugador 1")
-    document.getElementById('jugador').value= "Jugador 2"
+  if (jugadorAct === jugador1){
+    jugadorAct = jugador2;
+    $("#jugador").html("Jugador 2")
+
   }
   else{
-    jugadorAct = 1;
-    $("#nrojugador").html("Jugador 2")
-    document.getElementById('jugador').value= "Jugador 1"
+    jugadorAct = jugador1;
+    $("#jugador").html("Jugador 1")
+
   }
 }
