@@ -26,11 +26,15 @@
 
 .nosotros{
   width: 650px;
-  margin: 26,5% auto;
+  margin: 26,5% auto !important;
 }
 
 .cargar{
   color: black;
+}
+
+.letradestacada{
+  color:#76ADAD;
 }
 
 .collapse li, .logo{
@@ -56,11 +60,6 @@
   width: 26% auto;
   margin: 0px auto;
 }
-
-.h2{
-  color: #76ADAD;
-}
-
 
 table {
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
