@@ -15,16 +15,16 @@
 .carousel-inner { text-align: center; }
 .carousel .item > img { display: inline-block; }
 .item{ display: inline-block; }
-.fuentecarousel, .nosotros{
+.fuentecarousel, .estilonosotros{
   background: #464646;
-  height: auto;
+  /*height: auto;*/
 }
 
-.nosotros, .tituloarticulo{
+.estilonosotros, .tituloarticulo{
   color: #76ADAD;
 }
 
-.nosotros{
+.estilonosotros{
   width: 650px;
   margin-left: 26,5% auto;
 }
