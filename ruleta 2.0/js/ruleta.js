@@ -1,7 +1,11 @@
 "use strict";
 
-var apuestas = [];
 const costo_apuesta =1; //este va a ser el valor de las apuesta. en este caso sera de 1
+const apuestacolor=2;
+const apuestaparidad=2;
+const apuestamitad=2
+const apuestapleno=2;
+var tablerito = new tablero(0);// creo un tablero vacio
 var jugador1 = new jugador;
 var jugador2 = new jugador;
 var jugadorAct = jugador1;
@@ -14,17 +18,17 @@ function jugador(){//negro, rojo, par, impar, menor, mayor, pleno
   return{
     credito: 100,
     apuesta: apostado,
-    getCredit: function(){
+    devolvercredito: function(){
       return this.credito;
     },
-    getapuesta: function(){
+    devolverapuesta: function(){
       return this.apuesta;
     },
     sumarapuesta: function(tipoapuesta) {
       if (this.credito === 0){
         return alert("no posee sufieciente credito")
       }
-      this.disminuirCredito();
+      this.restarcredito();
       var noesta=true;
       for (var i = 0; i < this.apuesta.length; i++) {
         if (this.apuesta[i].devolver_tipoapuesta() === tipoapuesta){
@@ -36,13 +40,28 @@ function jugador(){//negro, rojo, par, impar, menor, mayor, pleno
         var ojeto = new apuesta(tipoapuesta)
         this.apuesta.push(ojeto)
       }
-    },
+      this.mostrarApuestas();
 
-    aumentarCredito: function(costo_apuesta){
+    },
+    sumarcredito: function(costo_apuesta){
       this.credito = this.credito + costo_apuesta;
     },
-    disminuirCredito: function(){
+    restarcredito: function(){
       this.credito= this.credito- costo_apuesta;
+    },
+    mostrarApuestas: function(){
+      var apuestasAct= jugadorAct.devolverapuesta();
+      var apuestashechas = "";
+      apuestashechas = '<span> Credito = $'+jugadorAct.devolvercredito() + '</span>'
+      for (var i = 0; i < apuestasAct.length; i++) {
+        apuestashechas += '<span>'+apuestasAct[i].devolver_tipoapuesta()+': $'+apuestasAct[i].devolver_valorapuesta()+'</span>';
+      }
+      //string = string + '<span  id="ganador"></span>';
+      $("#apostados").html(apuestashechas);
+
+    },
+    reiniciarapuesta: function(){
+      this.apuesta = [];
     }
   }
 }
@@ -56,6 +75,9 @@ function jugador(){//negro, rojo, par, impar, menor, mayor, pleno
 function numero(valor, cantnum){ // tengo que agregar que la mitad para arriba sea al revez los colores
   return {
     numero: valor,
+    devolver_numero: function(){
+      return this.numero;
+    },
     paroimpar:function () {
       if(this.numero === 0){
         return "es cero"
@@ -130,7 +152,46 @@ function tablero(cantnum) {
     },
     gettablero: function(){
       return this.arreglon;
+    },
+    tirarruleta: function(){
+      var cantidad = this.arreglon.length;
+      return Math.floor((Math.random() * cantidad)) //calcule el numero al azart entre los que tengo
+    },
+    verificarapuesta: function(jugador, nro){
+      var nroganador = nro;
+      var objnumero = this.arreglon[nroganador];
+      var string = 'ganador: '+ nroganador;
+      var apuestasjugador = jugador.devolverapuesta();
+      var totalganado = 0;
+      for (var i = 0; i < apuestasjugador.length; i++) {
+        if (apuestasjugador[i].devolver_tipoapuesta() === objnumero.color()) {
+          totalganado += (apuestasjugador[i].devolver_valorapuesta() * apuestacolor);
+        }
+        else if (apuestasjugador[i].devolver_tipoapuesta() === objnumero.devolver_numero()) {
+          totalganado += (apuestasjugador[i].devolver_valorapuesta() * apuestapleno);
+        }
+        else if (apuestasjugador[i].devolver_tipoapuesta() === objnumero.paroimpar()) {
+          totalganado += (apuestasjugador[i].devolver_valorapuesta() * apuestaparidad);
+        }
+        else if (apuestasjugador[i].devolver_tipoapuesta() === objnumero.mitad()) {
+          totalganado += (apuestasjugador[i].devolver_valorapuesta() * apuestamitad);
+        }
+
+      }
+      jugador.sumarcredito(totalganado);
+      //mostrarApuestas();
+      if (jugador === jugador1) {
+        var mensaje = "<span>jugador 1 gano: " + totalganado + "</span>";
+
+      }
+      else {
+        var mensaje = "<span> Jugador 2 gano: " + totalganado + "</span>";
+      }
+
+      $(mensaje).appendTo("#apostados");
+      jugador.reiniciarapuesta();
     }
+
   }
 }
 
@@ -138,8 +199,10 @@ function tablero(cantnum) {
 
 function cargartodo(){
   var cantn = $("#cantidad").val();
-  var tablerito = new tablero(cantn);
+  var tablerote = new tablero(cantn);
+  tablerito = tablerote;
   tablerito.mostrartablero();
+  jugadorAct.mostrarApuestas();
 }
 
 $("#entrar").on("click", function(){cargartodo()});
@@ -159,7 +222,7 @@ function mostrarnumeros(arreglon) {
   apu = apu + '<input type="button" id="nimpar" class="impares col-md-6" value="impares"></input>';
   apu = apu + '<input type="button" id="mitad1" class="primitad col-md-6" value="'+"1-"+medio+'"></input>';
   apu = apu + '<input type="button" id="mitad2" class="segmitad col-md-6" value="'+otromedio+'-'+final+'"></input>';
-  apu = apu + '<button id="jugador" class="suerte col-md-6">Jugador 1</button>';
+  apu = apu + '<button id="jugador" class="suerte col-md-6">Ir a jugador 2</button>';
   apu = apu + '<input type="button" id="suerte" class="suerte col-md-6" value="SUERTE!"></input>';
   $("#mostrarapuestas").append(apu);
   agregarapuesta();
@@ -173,30 +236,25 @@ function agregarapuesta(){
   $("#mitad1").on("click", function (){jugadorAct.sumarapuesta("primitad")});
   $("#mitad2").on("click", function (){jugadorAct.sumarapuesta("segmitad")});
   $("#jugador").on("click", function (){cambiarjugador()});
-
-  //----------------------este seria para que juege-----------//
-
-  //---------------------------------------------------------//
+  $("#suerte").on("click", function(){
+    var nro = tablerito.tirarruleta();
+    $("#apostados").html("");
+    var gano = '<span>el numero ganador es: ' + nro +'</span>';
+    $(gano).appendTo("#apostados");
+    tablerito.verificarapuesta(jugador1, nro);
+    tablerito.verificarapuesta(jugador2, nro);
+  });
 
   var arreglon = $(".numero");
   for (var i = 0; i < arreglon.length; i++) {
     asignarvalor(i, arreglon[i])
   }
 }
+//--------------------------------------
 
-//---------------- hecho hoy
-$("#suerte").on("click", function(){mostrarApuestas()});
 
-function mostrarApuestas(){
-  var string = "";
-  for (var i = 0; i < apuestas.length; i++) {
-    string = string + '<span>'+apuestas[i].getType()+': $'+apuestas[i].getValor()+'</span>';
-  }
-  string = string + '<span  id="ganador"></span>';
-  $(".tablaDeApuestas").html(string);
-  string = 'Credito = $'+player.getCredit();
-  $("#credito").html(string);
-}
+
+
 
 function asignarvalor(nro, boton){
   boton.onclick = function(){
@@ -207,12 +265,15 @@ function asignarvalor(nro, boton){
 function cambiarjugador(){
   if (jugadorAct === jugador1){
     jugadorAct = jugador2;
-    $("#jugador").html("Jugador 2")
+
+    $("#jugador").html("Ir a Jugador 1");
+    $("#nrojugador").html("Jugador 2");
 
   }
   else{
     jugadorAct = jugador1;
-    $("#jugador").html("Jugador 1")
-
+    $("#jugador").html("Ir a Jugador 2");
+    $("#nrojugador").html("Jugador 1");
   }
+  jugadorAct.mostrarApuestas();
 }

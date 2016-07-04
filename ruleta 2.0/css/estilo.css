@@ -54,3 +54,14 @@ h2{
 .verde{
   background-color: green;
 }
+
+.dividirespacio{
+  clear: both;
+}
+
+#apostados span{
+  color: white;
+  display: block;
+  background-color: #464646;
+
+}
