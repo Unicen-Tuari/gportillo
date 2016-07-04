@@ -1,5 +1,5 @@
 body {
-  background-image: url(https://cdn.civitatis.com/guias/lasvegas/fotos/the-strip-vegas.jpg);
+  background-color: #114611;
   background-position: center center;
 
 
@@ -16,12 +16,12 @@ body {
 
   /* Fijamos un color de fondo para que se muestre mientras se está
     cargando la imagen de fondo o si hay problemas para cargarla  */
-  background-color: #464646;
+
 }
 
 h1{
   text-align: center;
-  background-color: red;
+  background-color: #55AA55;
 }
 h2{
   text-align: center;
@@ -59,7 +59,7 @@ h2{
   clear: both;
 }
 
-#apostados span{
+#apostados span, .apostados{
   color: white;
   display: block;
   background-color: #464646;

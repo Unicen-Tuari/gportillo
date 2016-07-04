@@ -41,7 +41,6 @@ function jugador(){//negro, rojo, par, impar, menor, mayor, pleno
         this.apuesta.push(ojeto)
       }
       this.mostrarApuestas();
-
     },
     sumarcredito: function(costo_apuesta){
       this.credito = this.credito + costo_apuesta;
@@ -71,7 +70,6 @@ function jugador(){//negro, rojo, par, impar, menor, mayor, pleno
 
 /*********************************/
 /*          OBJETO NUMERO       */
-
 function numero(valor, cantnum){ // tengo que agregar que la mitad para arriba sea al revez los colores
   return {
     numero: valor,
@@ -118,7 +116,7 @@ function numero(valor, cantnum){ // tengo que agregar que la mitad para arriba s
 /*          OBJETO APUESTA       */
 function apuesta(tipo, costo_apuesta){
   return {
-    valor_apuesta:1, //aca seria costo apuesta
+    valor_apuesta:1, //aca seria costo_apuesta
     tipo_apuesta:tipo,
     aumentar_apuesta: function () {
       this.valor_apuesta = this.valor_apuesta + 1;
@@ -176,22 +174,18 @@ function tablero(cantnum) {
         else if (apuestasjugador[i].devolver_tipoapuesta() === objnumero.mitad()) {
           totalganado += (apuestasjugador[i].devolver_valorapuesta() * apuestamitad);
         }
-
       }
       jugador.sumarcredito(totalganado);
       //mostrarApuestas();
       if (jugador === jugador1) {
-        var mensaje = "<span>jugador 1 gano: " + totalganado + "</span>";
-
+        var mensaje = "<span> Jugador 1 gano: " + totalganado + "</span>";
       }
       else {
         var mensaje = "<span> Jugador 2 gano: " + totalganado + "</span>";
       }
-
       $(mensaje).appendTo("#apostados");
       jugador.reiniciarapuesta();
     }
-
   }
 }
 
@@ -251,10 +245,6 @@ function agregarapuesta(){
   }
 }
 //--------------------------------------
-
-
-
-
 
 function asignarvalor(nro, boton){
   boton.onclick = function(){
