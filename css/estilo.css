@@ -25,7 +25,7 @@
 }
 
 .nosotros{
-  width: 650px;
+  width: 650px !important;
   margin: 26,5% auto !important;
 }
 
@@ -50,7 +50,7 @@
 .container{
   background-color: #464646;
   opacity: 0.99;
-  /* color: white; */
+  color: white;
 }
 
 .tablita{
