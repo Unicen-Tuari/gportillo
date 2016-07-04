@@ -32,10 +32,7 @@
 .cargar{
   color: black;
 }
-/*.container{
-  position: absolute;
-}
-*/
+
 .collapse li, .logo{
   cursor:pointer;
 }
@@ -50,8 +47,13 @@
   background-color: #464646;
   opacity: 0.99;
   color: white;
-
 }
+
+.tablita{
+  margin: 23%;
+}
+
+
 table {
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
   font-size: 12px;
