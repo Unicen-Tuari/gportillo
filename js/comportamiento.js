@@ -16,7 +16,7 @@ $(document).ready(function(){
 });
 
 //funcion cargar ajax
-// código de inicialización de eventos
+// iniciamos los eventos
 function MostrarContenido(data) {
   $("#infoamostrar").html(data);
 
@@ -68,7 +68,6 @@ function cargararticulos(prod){
 }
 //fin del get
 
-
 function elimprod(boton,id) {
   $(boton).on("click",function(){
     borrarprod(id)}  )
@@ -91,7 +90,7 @@ function elimprod(boton,id) {
   }
 
   function mostrarprod(){
-    var grupo = 124;
+    var grupo = 12;
     $.ajax({
       method: "GET",
       dataType: 'JSON',
@@ -105,16 +104,11 @@ function elimprod(boton,id) {
       }
     });
   }
-
-
-
-
   ////
-
 
   /// anda joya el cargar al servidor
   function guardarprod(){
-    var grupo = 124; //yo soy el 12
+    var grupo = 12;
     var prod = {
       codigo: "",
       producto: "",
