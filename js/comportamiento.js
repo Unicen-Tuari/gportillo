@@ -146,14 +146,3 @@ function elimprod(boton,id) {
   }
 
   // hasta aca esta jotita
-
-  // para que muestre la fecha en pantalla. Lo copie de internet
-
-  $('#datepicker').datepicker();
-function today(){
-    var d = new Date();
-    var curr_date = d.getDate();
-    var curr_month = d.getMonth() + 1;
-    var curr_year = d.getFullYear();
-    document.write(curr_date + "-" + curr_month + "-" + curr_year);
-}
