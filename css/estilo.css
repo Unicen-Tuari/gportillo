@@ -52,6 +52,10 @@
 .tablita{
   margin-left: 0px;
 }
+.carousel-caption{
+  width: 100%;
+  margin: 0px auto;
+}
 
 
 table {
